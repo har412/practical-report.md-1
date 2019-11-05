@@ -313,29 +313,329 @@ the year is leap
 ```
 ## 14. Program check whether the number is prime or not.
 ```C
-#include<stdio.h>
+#include <stdio.h>
 int main()
-{ 
-int a;
-printf("type year:");
-scanf("%d",&a);
-if(a%4=0)
-printf("the year is leap");
+{
+int i, num, p = 0;
+printf("Please enter a number: \n");
+scanf("%d", &num);
+for(i=1; i<=num; i++)
+{
+if(num%i==0)
+{
+p++;
+}
+}
+if(p==2)
+{
+printf("Entered number is %d "\
+"and it is a prime number.",num);
+}
 else
-printf("the year is not leap");
+{
+printf("Entered number is %d "\
+"and it is not a prime number.",num);
+}
+}
+```
+## Output of Program
+```C
+Please enter a number: 4                                                                                                 
+Entered number is 4 and it is not a prime number.  
+```
+## 15. Program to find number is palindrome or not.
+```C
+#include <stdio.h>
+int main ()
+{
+    int n, reverse=0,t;
+    printf("Enter a number to check if it is a palindrome or not\n");
+    scanf("%d",&n);
+    t=n;
+    while (t!=0)
+    {
+     reverse = reverse*10;
+     reverse = reverse + t % 10;
+     t = t/10;
+     }
+if (n==reverse)
+printf ("%d is a palindrome number.\n",n);
+else 
+printf ("%d is not a palindrome number.\n",n);
 return 0;
 }
 ```
 ## Output of Program
 ```C
-type year:2016                                                                                                                
-the year is leap 
+Enter a number to check if it is a palindrome or not 2546452                                                     
+2546452 is a palindrome number.
 ```
+## 16. Program to display Fibonacci Series up to n number of terms.
+```C
+#include <stdio.h>
+int main()
+{
+    int i, n, t1 = 0, t2 = 1, nextTerm;
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+    printf("Fibonacci Series: ");
+    for (i = 1; i <= n; ++i)
+    {
+        printf("%d, ", t1);
+        nextTerm = t1 + t2;
+        t1 = t2;
+        t2 = nextTerm;
+    }
+    return 0;
+}
+```
+## Output of Program
+```C
+Enter the number of terms: 10                                                                                                 
+Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+```
+## 17. Program to enter and print elements of array (1d)
+```C
 
+#include <stdio.h>
+int main()
+{
+    int i[5],a;
+    printf("enter the elements of array:");
+    for(a=0;a<5;a++)
+    {
+    scanf("%d",&i[a]);
+    }
+    for(a=0;a<5;a++)
+    {
+    printf("array i[%d]=%d\n",a,i[a]);
+    }
+    return 0;
+}
+```
+## Output of Program
+```C
+enter the elements of array:25                                                                                              
+26                                                                                                                          
+27                                                                                                                           
+28                                                                                                                           
+29                                                                                                                           
+array i[0]=25                                                                                                                
+array i[1]=26                                                                                                                
+array i[2]=27                                                                                                                
+array i[3]=28                                                                                                                
+array i[4]=29
+```
+## 18. Program to enter and print elements of array (2d)
+```C
 
+#include <stdio.h>
+int main()
+{
+    int i[5][2],a,b;
+    printf("enter the elements of array:");
+    for(a=0;a<5;a++)
+    {
+    for(b=0;b<2;b++)
+    scanf("%d",&i[a][b]);
+    }
+    for(a=0;a<5;a++)
+    {
+    for(b=0;b<2;b++)
+    printf("array i[%d][%d]=%d\n",a,b,i[a][b]);
+    }
+    return 0;
+}
+```
+## Output of Program
+```C
+enter the elements of array:1                                                                                                
+2                                                                                                                             
+3                                                                                                                             
+4                                                                                                                             
+5
+6
+7
+8
+9
+10
+array i[0][0]=1
+array i[0][1]=2
+array i[1][0]=3
+array i[1][1]=4
+array i[2][0]=5
+array i[2][1]=6
+array i[3][0]=7
+array i[3][1]=8
+array i[4][0]=9
+array i[4][1]=10 
+```
+## 19. Program to print matrix.
+```C
+#include <stdio.h>
+int main()
+{
+   int a[3][3],b,c;
+   for(b=0;b<3;b++)
+   {
+   for(c=0;c<3;c++)
+   {
+   printf("the value of array[%d][%d]:",b,c);
+   scanf("%d",&a[b][c]);
+   }
+   }
+   for(b=0;b<3;b++)
+   {
+   for(c=0;c<3;c++)
+   {
+   printf("%d\t",a[b][c]);
+   }
+   printf("\n");
+   }
+    return 0;
+}
+```
+## Output of Program
+```C
+the value of array[0][0]:1                                                                                                  
+the value of array[0][1]:22
+the value of array[0][2]:333
+the value of array[1][0]:11
+the value of array[1][1]:222
+the value of array[1][2]:3333
+the value of array[2][0]:111
+the value of array[2][1]:2222
+the value of array[2][2]:33333
+1       22      333
+11      222     3333
+111     2222    33333 
+```
+## 20. Program to add two matrices.
+```C
+#include<stdio.h>
+int main()
+{
+int a[5][4],b[4][5],c[5][5],i,j;
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("enter value of 1st [%d] [%d]: \n",i,j);
+scanf("%d",&a[i][j]);
+ }
+}
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("enter value of 2nd [%d] [%d]: \n",i,j);
+scanf("%d",&b[i][j]);
+ }
+}
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+c[i][j]=a[i][j]+b[i][j];
+ }
+}
+printf("addition of two matrices is:\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("%d\t",c[i][j]);
+}
+printf("\n");
+}
+printf("\n");
+return 0;
+}
+```
+## Output of Program
+```C
+enter value of 1st [0] [0]: 1
+enter value of 1st [0] [1]: 2
+enter value of 1st [1] [0]: 3
+enter value of 1st [1] [1]: 4
+enter value of 1st [2] [0]: 5
+enter value of 1st [2] [1]: 6
 
+enter value of 2nd [0] [0]: 7
+enter value of 2nd [0] [1]: 8
+enter value of 2nd [1] [0]: 9
+enter value of 2nd [1] [1]: 10
+enter value of 2nd [2] [0]: 11
+enter value of 2nd [2] [1]: 12
 
+addition of two matrices is:                                                                                                  
+8       10                                                                                                                      
+12      14                                                                                                                      
+16      18  
+```
+## 21. Program to subtraction of matrices.
+```C
+#include<stdio.h>
+int main()
+{
+int a[5][4],b[4][5],c[5][5],i,j;
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("enter value of 1st [%d] [%d]: \n",i,j);
+scanf("%d",&a[i][j]);
+ }
+}
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("enter value of 2nd [%d] [%d]: \n",i,j);
+scanf("%d",&b[i][j]);
+ }
+}
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+c[i][j]=a[i][j]-b[i][j];
+ }
+}
+printf("subtraction of two matrices is:\n");
+for(i=0;i<3;i++)
+{
+for(j=0;j<2;j++)
+{
+printf("%d\t",c[i][j]);
+}
+printf("\n");
+}
+printf("\n");
+return 0;
+}
+```
+## Output of Program
+```C
+enter value of 1st [0] [0]: 1
+enter value of 1st [0] [1]: 2
+enter value of 1st [1] [0]: 3
+enter value of 1st [1] [1]: 4
+enter value of 1st [2] [0]: 5
+enter value of 1st [2] [1]: 6
 
+enter value of 2nd [0] [0]: 7
+enter value of 2nd [0] [1]: 8
+enter value of 2nd [1] [0]: 9
+enter value of 2nd [1] [1]: 10
+enter value of 2nd [2] [0]: 11
+enter value of 2nd [2] [1]: 12
+
+addition of two matrices is:                                                                                                  
+6       6                                                                                                                      
+6       6                                                                                                                      
+6       6  
+```
 
 
 
