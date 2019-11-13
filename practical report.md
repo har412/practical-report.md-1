@@ -636,7 +636,168 @@ addition of two matrices is:
 6       6                                                                                                                      
 6       6  
 ```
+## 22. Program to multiplication of matrices.
+```C
+#include<stdio.h>
+int
+main ()
+{
+  int a[2][2], b[2][2], c[2][2], i, j, k;
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  a[i][j] = 0;
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  b[i][j] = 0;
+	}
+    }
+     for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  c[i][j] = 0;
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("enter value of 1st [%d] [%d]: \n", i, j);
+	  scanf ("%d", &a[i][j]);
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("enter value of 2nd [%d] [%d]: \n", i, j);
+	  scanf ("%d", &b[i][j]);
+	}
+    }
+  for (i = 0; i < 2; i++)
+    for (j = 0; j < 2; j++)
+      for (k = 0; k < 2; k++)
+	{
+	  c[i][j] += a[i][k] * b[k][j];
+	}
+  printf ("subtraction of two matrices is:\n");
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("%d\t", c[i][j]);
+	}
+      printf ("\n");
+    }
+  printf ("\n");
+  return 0;
+}
+```
+## Output of Program
+```C
+enter value of 1st [0] [0]: 1
+enter value of 1st [0] [1]: 2
+enter value of 1st [1] [0]: 3
+enter value of 1st [1] [1]: 4
 
+
+enter value of 2nd [0] [0]: 5
+enter value of 2nd [0] [1]: 6
+enter value of 2nd [1] [0]: 7
+enter value of 2nd [1] [1]: 8
+
+
+addition of two matrices is:                                                                                                  
+19   24
+43   50
+```
+## 23. Program to find square of numbers using funcution.
+```C
+#include<stdio.h>
+int
+main ()
+{
+  int a[2][2], b[2][2], c[2][2], i, j, k;
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  a[i][j] = 0;
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  b[i][j] = 0;
+	}
+    }
+     for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  c[i][j] = 0;
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("enter value of 1st [%d] [%d]: \n", i, j);
+	  scanf ("%d", &a[i][j]);
+	}
+    }
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("enter value of 2nd [%d] [%d]: \n", i, j);
+	  scanf ("%d", &b[i][j]);
+	}
+    }
+  for (i = 0; i < 2; i++)
+    for (j = 0; j < 2; j++)
+      for (k = 0; k < 2; k++)
+	{
+	  c[i][j] += a[i][k] * b[k][j];
+	}
+  printf ("subtraction of two matrices is:\n");
+  for (i = 0; i < 2; i++)
+    {
+      for (j = 0; j < 2; j++)
+	{
+	  printf ("%d\t", c[i][j]);
+	}
+      printf ("\n");
+    }
+  printf ("\n");
+  return 0;
+}
+```
+## Output of Program
+```C
+enter value of 1st [0] [0]: 1
+enter value of 1st [0] [1]: 2
+enter value of 1st [1] [0]: 3
+enter value of 1st [1] [1]: 4
+
+
+enter value of 2nd [0] [0]: 5
+enter value of 2nd [0] [1]: 6
+enter value of 2nd [1] [0]: 7
+enter value of 2nd [1] [1]: 8
+
+
+addition of two matrices is:                                                                                                  
+19   24
+43   50
+```
 
 
 
