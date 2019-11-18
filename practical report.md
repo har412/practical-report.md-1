@@ -717,87 +717,273 @@ addition of two matrices is:
 19   24
 43   50
 ```
-## 23. Program to find square of numbers using funcution.
+# 23.Program of swapping of two numbers using call by value
+
 ```C
 #include<stdio.h>
-int
-main ()
+
+void swap(int a,int b);
+void swap(int a,int b)
 {
-  int a[2][2], b[2][2], c[2][2], i, j, k;
-  for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  a[i][j] = 0;
-	}
-    }
-  for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  b[i][j] = 0;
-	}
-    }
-     for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  c[i][j] = 0;
-	}
-    }
-  for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  printf ("enter value of 1st [%d] [%d]: \n", i, j);
-	  scanf ("%d", &a[i][j]);
-	}
-    }
-  for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  printf ("enter value of 2nd [%d] [%d]: \n", i, j);
-	  scanf ("%d", &b[i][j]);
-	}
-    }
-  for (i = 0; i < 2; i++)
-    for (j = 0; j < 2; j++)
-      for (k = 0; k < 2; k++)
-	{
-	  c[i][j] += a[i][k] * b[k][j];
-	}
-  printf ("subtraction of two matrices is:\n");
-  for (i = 0; i < 2; i++)
-    {
-      for (j = 0; j < 2; j++)
-	{
-	  printf ("%d\t", c[i][j]);
-	}
-      printf ("\n");
-    }
-  printf ("\n");
-  return 0;
+  int c;
+c=a;
+a=b;
+b=c;
+}
+
+int main()
+{
+
+   int a,b;
+printf("Enter two numbers :");
+scanf("%d %d",&a,&b);
+printf("value of a and b before swapping :%d %d\n ",a,b);
+swap(a,b);
+printf("value of a and b after swap :%d %d\n",a,b);
+return 0;
 }
 ```
-## Output of Program
+## Output of the program
+
 ```C
-enter value of 1st [0] [0]: 1
-enter value of 1st [0] [1]: 2
-enter value of 1st [1] [0]: 3
-enter value of 1st [1] [1]: 4
-
-
-enter value of 2nd [0] [0]: 5
-enter value of 2nd [0] [1]: 6
-enter value of 2nd [1] [0]: 7
-enter value of 2nd [1] [1]: 8
-
-
-addition of two matrices is:                                                                                                  
-19   24
-43   50
+Enter two numbers :5 6
+value of a and b before swapping :5 6
+ value of a and b after swap :5 6
 ```
+# 24.Program to swap two numbers using call by reference
+
+```C
+#include<stdio.h>
+
+void swap(int *a,int*b);
+void swap(int *a,int*b)
+{
+int temp;
+temp=*a;
+*a=*b;
+*b=temp;
+}
+int main()
+{
+int a,b;
+printf("Enter the two numbers :");
+scanf("%d %d",&a,&b);
+printf("Values of a and b before swap: %d  %d\n",a,b);
+swap(&a,&b);
+printf("values of a and b after swap: %d  %d\n",a,b);
+return 0;
+}
+```
+
+## Output of the program
+
+```C
+Enter the two numbers :5 6
+Values of a and b before swap: 5  6
+values of a and b after swap: 6  5
+```
+
+# 25.Program to find factorial of a number using recursion 
+ 
+ ```C
+ 
+#include<stdio.h>
+int fact(int n);
+int fact(int n)
+{
+int ans;
+if(n==0)
+ans=1;
+else
+ans=n*fact(n-1);
+return ans;
+}
+
+int main()
+{
+int n,result;
+printf("Enter the no whose factorial you want to get : ");
+scanf("%d",&n);
+ result=fact(n);
+printf("factorial of %d is: %d \n",n,result);
+return 0;
+}
+```
+
+## Output of the program
+```C
+Enter the no whose factorial you want to get : 5
+factorial of 5 is: 120 
+```
+
+# 26.Program to display fibonacchi series using recursion
+
+```C
+#include<stdio.h>
+
+ int fibonacchi(int n);
+
+int main()
+{
+int i,n,c=0;
+printf("Enter the no of fibonacchi terms you want to print: ");
+scanf("%d",&n);
+for(i=1;i<+n;i++)
+{
+  printf("%d\n",fibonacchi(c));
+     c++;
+}
+return 0;
+}
+
+int fibonacchi(int n)
+{
+    if(n==0)
+   return 0;
+   if(n==1)
+    return 1;
+else
+    return(fibonacchi(n-1) + fibonacchi(n-2));
+}
+```
+
+## Output of the program
+```C
+Enter the no of fibonacchi terms you want to print: 10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+```
+
+# 27.Program to enter and  display elements of structure
+
+```C
+#include<stdio.h>
+
+struct data
+{
+ char name[20];
+ char branch[10];
+  int roll_no;
+};
+
+int main()
+{
+struct data c;   //declared data type and variable
+printf("Enter your name,branch,roll no :\n");
+scanf("%s %s %d",&c.name,&c.branch,&c.roll_no);
+printf("YOUR DATA\n name : %s\nbranch : %s\nroll no : %d\n",c.name,c.branch,c.roll_no);
+return 0;
+}
+```
+
+## Output of the program
+```C
+Enter your name,branch,roll no :
+harkirat
+cse
+1915031
+YOUR DATA
+ name : harkirat
+branch : cse
+roll no : 1915031
+```
+
+# 28.Program to enter data of 5 students using array in structures
+
+```C
+#include<stdio.h>
+
+struct record
+{
+int roll_no;
+char name[20];
+int marks;
+long contact_no;
+};
+
+int main()
+{
+int i;
+struct record r[5];
+for(i=1;i<6;i++)
+{
+  printf("STUDENT %d \nEnter roll no,name,marks,contact no: ",i);
+scanf("%d %s %d %ld",&r[i].roll_no,&r[i].name,&r[i].marks,&r[i].contact_no);
+}
+for(i=1;i<6;i++)
+{
+   printf("for student %d \n roll no :%d \n name: %s  \n marks: %d \n contact no: %ld \n\n ",i,r[i].roll_no,r[i].name,r[i].marks,r[i].conta$
+}
+return 0;
+}
+```
+
+## Output of the program 
+```C
+
+Enter roll no,name,marks,contact no: 1
+harkirat
+56
+5494656313
+Enter roll no,name,marks,contact no: 2
+gursewak
+62
+264654656563
+STUDENT 3 
+Enter roll no,name,marks,contact no: 3
+jasjot
+95
+56556556562
+STUDENT 4 
+Enter roll no,name,marks,contact no: 4
+harjit
+75
+651626323123
+STUDENT 5 
+Enter roll no,name,marks,contact no: 5     
+harjot
+65
+56565262526352
+for student 1 
+ roll no :1 
+ name: harkirat  
+ marks: 56 
+ contact no: 5494656313 
+
+ for student 2 
+ roll no :2 
+ name: gursewak  
+ marks: 62 
+ contact no: 264654656563 
+
+ for student 3 
+ roll no :3 
+ name: jasjot  
+ marks: 95 
+ contact no: 56556556562 
+
+ for student 4 
+ roll no :4 
+ name: harjit  
+ marks: 75 
+ contact no: 651626323123 
+
+ for student 5 
+ roll no :5 
+ name:   
+ marks: 65 
+ contact no: 56565262526352 
+```
+
+***
+***
 
 
 
